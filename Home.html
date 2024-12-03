@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home page CV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="theme.js" defer></script>
+    <script src="like.js" defer></script>
+    <script src="skills.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <!-- <h1>Home page</h1> -->
+    </header>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="Home.html">Home page</a></li>
+            <li><a href="Work_Experience.html">Work Experience</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><button class="toggle-theme" id="toggle-theme">Light Mode</button></li>
+        </ul>
+    </nav>
+
+    <h1>Semenets Oleksandr</h1>
+
+    <main>
+        <section class="left">
+            <img class="cv" title="Photo_CV" src="photo_cv.png" alt="photo_cv">
+            <p><strong>Facebook: </strong><a href="https://www.facebook.com/profile.php?id=100010244220800">Oleksandr
+                    Semenets</a></p>
+            <p><b>Phone: </b>574-814-282</p>
+            <div class="like">
+                <button id="like-btn" title="like">Like</button>
+                <label for="like-btn"><span id="like-count"></span></label>
+                <button id="like-btn-reset" title="like-reset">Reset</button>
+            </div>
+        </section>
+        <section>
+            <h2>Info about me</h2>
+            <p><strong>Date of birth: </strong>03-10-1987;</p>
+            <p><strong>Town: </strong>Wroclaw;</p>
+            <p><strong>Work: </strong>Postman;</p>
+            <p><strong>Education: </strong>Zhytomyr Polytechnic State University <em>(radio engineer specialty);</em>
+            </p>
+            <p><strong>Marital status: </strong>Married;</p>
+            <p><strong>Nationality: </strong>Ukrainian;</p>
+            <p><strong>Hobby: </strong><em>Cars, traveling, cooking;</em></p>
+            <h2>My skills:</h2>
+            <ul class="skills" id="skills">
+                <li>Basic HTML + CSS;</li>
+                <li>Basic JavaScript;</li>
+                <li>Basic concept of database;</li>
+            </ul>
+            <form class="add-skills" id="add-skills">
+                <label for="new-skill"><b>Add skill:</b></label>
+                <input type="text" id="new-skill" title="Add new skill" placeholder="Add new skill...." minlength="5"
+                    maxlength="125">
+                <label for="add-skill-btn"></label>
+                <button type="submit" class="add-skill-btn" id="add-skill-btn">submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Autor: Oleksandr Semenets</p>
+        <a href="mailto:bobrt440@gmail.com">bobrt440@gmail.com</a>
+    </footer>
+
+</body>
+
+</html>

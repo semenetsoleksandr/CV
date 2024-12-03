@@ -1,0 +1,208 @@
+body {
+    background-color: lightgrey;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    word-break:break-all;
+}
+
+button.toggle-theme {
+    float:right;
+    background-color: lightslategray;
+    color: #fff;
+    border-style: none;
+    padding: 11px;
+    margin-top: -9px;
+
+}
+
+.dark-theme {
+    background-color: rgb(90, 90, 90);
+    font-family:'Courier New', Courier, monospace;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff
+}
+
+.dark-theme h1 {
+    color: #f7f7f7;
+}
+
+.dark-theme main {
+    background-color: rgb(53, 53, 53);
+}
+
+.dark-theme footer {
+    background-color: rgb(53, 53, 53);
+}
+.dark-theme .like button {
+    border-radius: 1px;
+    background-color: brown;
+    color: #f7f7f7;
+    font-style:normal;
+}
+.dark-theme .menu a, .dark-theme button{
+    background-color: brown;
+}
+
+main {
+    display: flex;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.right {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.left {
+    background-color: lightslategray;
+    width: 300px;
+    text-align: center;
+    padding-top: auto;
+    padding-bottom: auto;
+    color: #e6e6e6;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+.left p {
+    text-align:center;
+    font-style: italic;
+}
+
+
+.left a {
+    color: linen;
+    font-style: italic;
+}
+
+.like  {
+    color: #fff;
+    display:inline;
+    font-style: italic;
+}
+
+.like button {
+    font-style: italic;
+    padding: 3px;
+    margin: 15px;
+    width: 30%;
+    height: 40px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.like button:hover {
+    background-color: #c1f784;
+}
+
+.menu {
+    background-color:darkgrey;
+    overflow: hidden;
+    color: #ffffff;
+    margin: 0 auto 10px;
+    display: block;
+    border-radius: 8px;
+}
+
+.menu ul{
+    list-style: none; 
+    margin: 0 auto;
+    padding: 10px 0 ;
+
+}
+
+.menu li {
+    display: inline;
+    padding: 0px;
+}
+
+.menu a {
+    padding: 20px;
+    background:lightslategray;
+    border-right: 1px solid dimgray;
+    color: linen;
+    text-decoration: none;
+}
+
+.menu a:hover, .menu button:hover  {
+    background-color: #dbd93a;
+}
+
+h1 {
+    text-align: center;
+    color: lightcoral;
+}
+
+h2 {
+    padding-left: 50px;
+}
+
+ol {
+    color: darkblue;
+}
+
+li {
+    padding: 5px 0;
+    margin: 0;
+}
+
+img.cv {
+    width: 250px;
+    height: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+
+}
+
+.right label {
+    display:block;
+    color: green;
+
+}
+
+
+input, textarea {
+    width: 100%;
+    margin: 0 3px 10px;
+    padding: 5px;
+}
+
+textarea {
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.right button, .add-skill-btn{
+    width: 50%;
+    border-radius: 25px;
+    height: 25px;
+}
+
+.skills button {
+    margin-left: 5px;
+}
+
+.right button:hover ,.add-skill-btn:hover, .skills button:hover  {
+    background-color: #dbd93a;
+}
+
+footer{
+    text-align: center;
+    padding: 3px 0 10px 0;
+    margin-top: 10px;
+    background-color:darkgrey;
+    border-radius: 8px;
+}
+footer p, a {
+    font-style: normal;
+    color: darkcyan;
+}
