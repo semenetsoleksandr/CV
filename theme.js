@@ -11,7 +11,7 @@ function darkTheme(event) {
     changeTheme.removeEventListener('click', darkTheme);
     changeTheme.addEventListener('click', lightTheme);
 }
-В
+
 function lightTheme(event) {
     event.preventDefault();
     bodyTheme.classList.remove('dark-theme');

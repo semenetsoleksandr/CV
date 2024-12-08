@@ -174,7 +174,6 @@ img.cv {
 
 }
 
-
 input,
 textarea {
     width: 100%;
@@ -189,6 +188,7 @@ textarea {
 
 .right button,
 .add-skill-btn {
+    margin-top: 5px;
     width: 50%;
     border-radius: 25px;
     height: 25px;
