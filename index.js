@@ -29,4 +29,4 @@ function onReset(event) {
     form.style.display = 'block';
     reset.style.display = 'none';
     form.addEventListener('submit', onFormSubmit);
-}
+    }
