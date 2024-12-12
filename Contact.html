@@ -32,17 +32,14 @@
                 <input type="email" title="Your email" placeholder="Your email" id="email">
                 <label for="message">Your message:</label>
                 <textarea title="Your message..." id="message" placeholder="Your message..." minlength="20"
-                    maxlength="150"></textarea>
-                <label for="send" class="sendlabel">
-                    <p id="character-count">100 characters left…</p>
-                </label>
+                    maxlength="100"></textarea>
+                <label for="send" class="sendlabel" id="character-count"></label>
                 <button type="submit" title="Send" id="send" class="sendbtn">Send message</button>
-
             </form>
-            <form id="form-reset" style="display: none;">
+            <div id="form-reset" style="display: none;">
                 <label for="button">&#10004; Form was successfully submitted</label>
                 <button type="button" title="Reset" id="button">Reset</button>
-            </form>
+            </div>
         </section>
     </main>
 
