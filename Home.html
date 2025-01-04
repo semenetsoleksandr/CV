@@ -9,6 +9,7 @@
     <script src="theme.js" defer></script>
     <script src="like.js" defer></script>
     <script src="skills.js" defer></script>
+    <script src="github.js" defer></script>
 </head>
 
 <body>
@@ -26,11 +27,11 @@
         </ul>
     </nav>
 
-    <h1>Semenets Oleksandr</h1>
+    <h1 id="git-main-name"></h1>
 
     <main>
         <section class="left">
-            <img class="cv" title="Photo_CV" src="photo_cv.png" alt="photo_cv">
+            <img class="cv" id="avatar" title="Photo_CV" src="photo_cv.png" alt="photo_cv">
             <p><strong>Facebook: </strong><a href="https://www.facebook.com/profile.php?id=100010244220800">Oleksandr
                     Semenets</a></p>
             <p><b>Phone: </b>574-814-282</p>
@@ -60,6 +61,10 @@
                 <label for="add-skill-btn"></label>
                 <button type="submit" class="add-skill-btn" id="add-skill-btn">submit</button>
             </form>
+            <h2>Github profile:</h2>
+            <p><strong>Name: </strong><span id="github-name"></span></span></p>
+            <p><strong>Description: </strong><span id="github-bio"></span></p>
+            <p><strong>Link: </strong><a id="github-link"></a></p>
         </section>
     </main>
 
