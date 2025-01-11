@@ -204,6 +204,10 @@ textarea {
     background-color: #dbd93a;
 }
 
+#github-bio {
+    word-break: break-word;
+}
+
 footer {
     text-align: center;
     padding: 3px 0 10px 0;
