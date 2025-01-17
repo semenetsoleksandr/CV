@@ -11,9 +11,9 @@ fetch('./skills.json')
             const li = document.createElement('li')
             const close = document.createElement('button')
             close.setAttribute('type', 'button')
-            close.innerHTML = '&times'
+            close.innerHTML = '<i class="fa-regular fa-circle-xmark fa-lg"></i>'
             skills.appendChild(li)
-            li.innerText = el
+            li.innerHTML = `<span style="color:darkblue;" class="fa-li" ><i class="fa-solid fa-check-square"></i></span>${el} `
             li.appendChild(close)
             close.addEventListener('click', () => {
                 skills.removeChild(li)
@@ -30,8 +30,8 @@ function addSkill(event) {
         let li = document.createElement('li')
         let close = document.createElement('button')
         close.setAttribute('type', 'button')
-        close.innerHTML = '&times'
-        li.innerText = newSkill.value
+        close.innerHTML = '<i class="fa-regular fa-circle-xmark fa-lg"></i>'
+        li.innerHTML = li.innerHTML = `<span style="color:darkblue;" class="fa-li"><i class="fa-solid fa-check-square"></i></span>${newSkill.value} `
         skills.appendChild(li)
         li.appendChild(close)
         close.addEventListener('click', () => {
