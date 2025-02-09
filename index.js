@@ -22,6 +22,9 @@ function onFormSubmit(event) {
     form.style.display = 'none';
     reset.style.display = 'block';
     reset.addEventListener('click', onReset);
+    localStorage.removeItem('area')
+    message.value = ''
+    counter.innerText = '';
 }
 
 function onReset(event) {
@@ -29,4 +32,9 @@ function onReset(event) {
     form.style.display = 'block';
     reset.style.display = 'none';
     form.addEventListener('submit', onFormSubmit);
-    }
+}
+
+message.value = localStorage.getItem('area')
+message.oninput = () => {
+    localStorage.setItem('area', message.value)
+}

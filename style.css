@@ -1,6 +1,9 @@
 body {
     background-color: lightgrey;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
     max-width: 800px;
     margin: 0 auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -19,7 +22,10 @@ button.toggle-theme {
 
 .dark-theme {
     background-color: rgb(90, 90, 90);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Flamenco", serif;
+    font-size: large;
+    font-weight: 400;
+    font-style: normal;
     max-width: 800px;
     margin: 0 auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -49,6 +55,12 @@ button.toggle-theme {
 .dark-theme button {
     background-color: brown;
 }
+
+.dark-theme li button {
+    background-color: rgb(53, 53, 53);
+    color: #fff;
+}
+
 
 main {
     display: flex;
@@ -93,13 +105,16 @@ main {
 }
 
 .like button {
-    font-style: italic;
     padding: 3px;
     margin: 15px;
     width: 30%;
     height: 40px;
     border-radius: 15px;
-    text-align: center;
+}
+
+.fa-li button {
+    background-color: red;
+    color: red;
 }
 
 .like button:hover {
@@ -158,6 +173,11 @@ li {
     margin: 0;
 }
 
+li button {
+    border: none;
+    background-color: white;
+}
+
 img.cv {
     width: 250px;
     height: 250px;
@@ -191,7 +211,7 @@ textarea {
     margin-top: 5px;
     width: 50%;
     border-radius: 25px;
-    height: 25px;
+    height: 35px;
 }
 
 .skills button {
@@ -202,6 +222,10 @@ textarea {
 .add-skill-btn:hover,
 .skills button:hover {
     background-color: #dbd93a;
+}
+
+#github-bio {
+    word-break: break-word;
 }
 
 footer {
