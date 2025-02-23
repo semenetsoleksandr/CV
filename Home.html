@@ -20,68 +20,70 @@
 
 <body>
 
-    <header>
-        <!-- <h1>Home page</h1> -->
-    </header>
+<header>
+    <!-- <h1>Home page</h1> -->
+</header>
 
-    <nav class="menu">
-        <ul>
-            <li><a href="Home.html">Home page</a></li>
-            <li><a href="Work_Experience.html">Work Experience</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-            <li><button class="toggle-theme" id="toggle-theme">Light Mode</button></li>
+<nav class="menu">
+    <ul>
+        <li><a href="Home.html">Home page</a></li>
+        <li><a href="Work_Experience.html">Work Experience</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li>
+            <button class="toggle-theme" id="toggle-theme">Light Mode</button>
+        </li>
+    </ul>
+</nav>
+
+<h1 id="git-main-name"></h1>
+
+<main>
+    <section class="left">
+        <img class="cv" id="avatar" title="Photo_CV" src="photo_cv.png" alt="photo_cv">
+        <p><i class="fa-brands fa-facebook fa-xl"></i> <a
+            href="https://www.facebook.com/profile.php?id=100010244220800">Oleksandr
+            Semenets</a></p>
+        <p><i class="fa-solid fa-square-phone fa-xl"></i> 574-814-282</p>
+        <div class="like">
+            <button id="like-btn" title="like" class="fa-1x"><span style="color: blue;">
+                            <i class="fa-regular fa-thumbs-up fa-xl fa-beat"></i></span>
+            </button>
+            <label for="like-btn"><span id="like-count"></span></label>
+            <button id="like-btn-reset" title="like-reset"><span style="color: darkred;"><i
+                class="fa-solid fa-ban fa-xl"></i></span></button>
+        </div>
+    </section>
+    <section>
+        <h2>Info about me</h2>
+        <p id="git-town"></p>
+        <p id="git-work"></p>
+        <p><strong>Education: </strong>Zhytomyr Polytechnic State University <em>(radio engineer specialty);</em>
+        </p>
+        <p><strong>Nationality: </strong>Ukrainian;</p>
+        <p><strong>Hobby: </strong><em>Cars, traveling, cooking;</em></p>
+        <h2>My skills:</h2>
+        <ul class="fa-ul" id="skills">
         </ul>
-    </nav>
+        <form class="add-skills" id="add-skills">
+            <label for="new-skill"><b>Add skill:</b></label>
+            <input type="text" id="new-skill" title="Add new skill" placeholder="Add new skill...." minlength="2"
+                   maxlength="100">
+            <label for="add-skill-btn"></label>
+            <button type="submit" class="add-skill-btn" id="add-skill-btn"><i
+                class="fa-solid fa-circle-plus fa-xl"></i></button>
+        </form>
+        <h2>GitHub profile:</h2>
+        <p><strong>Name: </strong><span id="github-name"></span></p>
+        <p><strong>Description: </strong><span id="github-bio"></span></p>
+        <p><i class="fa-brands fa-github fa-2xl"></i> <a id="github-link"></a></p>
+    </section>
+</main>
 
-    <h1 id="git-main-name"></h1>
+<footer>
+    <p id="git-footer-name"></p>
+    <a href="mailto:example@gmail.com">example@gmail.com</a>
+</footer>
 
-    <main>
-        <section class="left">
-            <img class="cv" id="avatar" title="Photo_CV" src="photo_cv.png" alt="photo_cv">
-            <p><i class="fa-brands fa-facebook fa-xl"></i> <a
-                    href="https://www.facebook.com/profile.php?id=100010244220800">Oleksandr
-                    Semenets</a></p>
-            <p><i class="fa-solid fa-square-phone fa-xl"></i> 574-814-282</p>
-            <div class="like">
-                <button id="like-btn" title="like">
-                    <div class="fa-1x"><span style="color: blue;">
-                            <i class="fa-regular fa-thumbs-up fa-xl fa-beat"></i></span></div>
-                </button>
-                <label for="like-btn"><span id="like-count"></span></label>
-                <button id="like-btn-reset" title="like-reset"><span style="color: darkred;"><i
-                            class="fa-solid fa-ban fa-xl"></i></span></button>
-            </div>
-        </section>
-        <section>
-            <h2>Info about me</h2>
-            <p id="git-town"></p>
-            <p id="git-work"></p>
-            <p><strong>Education: </strong>Zhytomyr Polytechnic State University <em>(radio engineer specialty);</em>
-            </p>
-            <p><strong>Nationality: </strong>Ukrainian;</p>
-            <p><strong>Hobby: </strong><em>Cars, traveling, cooking;</em></p>
-            <h2>My skills:</h2>
-            <ul class="fa-ul" id="skills">
-            </ul>
-            <form class="add-skills" id="add-skills">
-                <label for="new-skill"><b>Add skill:</b></label>
-                <input type="text" id="new-skill" title="Add new skill" placeholder="Add new skill...." minlength="5"
-                    maxlength="100">
-                <label for="add-skill-btn"></label>
-                <button type="submit" class="add-skill-btn" id="add-skill-btn"><i
-                        class="fa-solid fa-circle-plus fa-xl"></i></button>
-            </form>
-            <h2>Github profile:</h2>
-            <p><strong>Name: </strong><span id="github-name"></span></span></p>
-            <p><strong>Description: </strong><span id="github-bio"></span></p>
-            <p><i class="fa-brands fa-github fa-2xl"></i> <a id="github-link"></a></p>
-        </section>
-    </main>
-
-    <footer>
-        <p id="git-footer-name"></p>
-        <a href="mailto:example@gmail.com">bobrt440@gmail.com</a>
-    </footer>
 
 </body>
 
