@@ -27,11 +27,47 @@ function addSkill() {
         alert("Add skill field cannot be empty");
     }
 }
-function createListSkill(data, id) {
+function editSkill(id, editSkillData) {
+    if (editSkillData != 0) {
+        fetch(`http://localhost:8080/skills/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify({ "skill": editSkillData })
+        });
+    }
+    else {
+        alert("Edit skill field cannot be empty");
+    }
+}
+function delSkill(id) {
+    fetch(`http://localhost:8080/skills/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+    });
+}
+function createListSkill(skill, id) {
     const li = document.createElement('li');
     skills.appendChild(li);
-    li.innerHTML = `<span style="color:darkblue;" class="fa-li" ><i class="fa-solid fa-check-square"></i></span>${data} `;
+    li.innerHTML = `<span style="color:darkblue;" class="fa-li" ><i class="fa-solid fa-check-square"></i></span>${skill}`;
     clsBtn(li, id);
+    editBtn(li, id);
+}
+function editBtn(li, id) {
+    const edit = document.createElement('button');
+    edit.setAttribute('type', 'button');
+    edit.setAttribute('id', id);
+    edit.innerHTML = '<i class="fa-solid fa-edit"></i>';
+    li.appendChild(edit);
+    function clickEditBtn() {
+        const id = edit.getAttribute('id');
+        editForm(li, id);
+        edit.removeEventListener('click', clickEditBtn);
+    }
+    edit.addEventListener('click', clickEditBtn);
 }
 function clsBtn(li, id) {
     const close = document.createElement('button');
@@ -45,12 +81,20 @@ function clsBtn(li, id) {
         delSkill(id);
     });
 }
-function delSkill(id) {
-    fetch(`http://localhost:8080/skills/${id}`, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
+function editForm(li, id) {
+    const editSkillData = document.createElement('input');
+    li.appendChild(editSkillData);
+    editSkillData.value = li.innerText;
+    editSkillData.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            editSkill(id, editSkillData.value);
+            li.removeChild(editSkillData);
+            location.reload();
+        }
+        if (event.key === "Escape") {
+            li.removeChild(editSkillData);
+            location.reload();
+        }
     });
 }
 main();

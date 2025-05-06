@@ -1,4 +1,4 @@
-const formAddSkill = document.getElementById('add-skills') as HTMLButtonElement 
+const formAddSkill = document.getElementById('add-skills') as HTMLButtonElement
 const newSkill = document.getElementById('new-skill') as HTMLInputElement
 const skills = document.getElementById('skills') as HTMLDListElement
 
@@ -29,15 +29,57 @@ function addSkill() {
     }
 }
 
-function createListSkill(data:string, id:string) {
-    const li = document.createElement('li')
-    skills.appendChild(li)
-    li.innerHTML = `<span style="color:darkblue;" class="fa-li" ><i class="fa-solid fa-check-square"></i></span>${data} `
-    clsBtn(li, id)
+function editSkill(id: number | null, editSkillData: string) {
+    if (editSkillData != "") {
+        fetch(`http://localhost:8080/skills/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify({"skill": editSkillData})
+        });
+    } else {
+        alert("Edit skill field cannot be empty")
+    }
 }
 
+
+function delSkill(id: string | null) {
+    fetch(`http://localhost:8080/skills/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+    });
+}
+
+function createListSkill(skill: string, id: string) {
+    const li = document.createElement('li')
+    skills.appendChild(li)
+    li.innerHTML = `<span style="color:darkblue;" class="fa-li" ><i class="fa-solid fa-check-square"></i></span>${skill}`
+    clsBtn(li, id)
+    editBtn(li, id)
+}
+
+function editBtn(li: HTMLLIElement, id: string) {
+    const edit = document.createElement('button')
+    edit.setAttribute('type', 'button')
+    edit.setAttribute('id', id)
+    edit.innerHTML = '<i class="fa-solid fa-edit"></i>'
+    li.appendChild(edit)
+
+    function clickEditBtn() {
+        const id = edit.getAttribute('id')
+        editForm(li, id)
+        edit.removeEventListener('click', clickEditBtn)
+    }
+
+    edit.addEventListener('click', clickEditBtn)
+}
+
+
 function clsBtn(li: HTMLLIElement, id: string) {
-    const close = document.createElement('button')
+    const close: HTMLButtonElement = document.createElement('button')
     close.setAttribute('type', 'button')
     close.setAttribute('id', id)
     close.innerHTML = '<i class="fa-regular fa-circle-xmark fa-lg"></i>'
@@ -49,13 +91,22 @@ function clsBtn(li: HTMLLIElement, id: string) {
     })
 }
 
-function delSkill(id: string|null) {
-    fetch(`http://localhost:8080/skills/${id}`, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-    });
+function editForm(li: HTMLLIElement, id: number) {
+    const editSkillData: HTMLInputElement = document.createElement('input')
+    li.appendChild(editSkillData)
+    editSkillData.value = li.innerText
+    editSkillData.addEventListener('keydown', (event: KeyboardEvent) => {
+            if (event.key === 'Enter') {
+                editSkill(id, editSkillData.value)
+                li.removeChild(editSkillData)
+                location.reload();
+            }
+            if (event.key === "Escape") {
+                li.removeChild(editSkillData)
+                location.reload();
+            }
+        }
+    )
 }
 
 main()

@@ -1,5 +1,6 @@
 .idea/
 .run/
+dist/
 node_modules/
 skills.db
 Thumbs.db

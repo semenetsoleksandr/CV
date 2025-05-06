@@ -6,8 +6,8 @@ const maxlength: number = parseInt(<string>message.getAttribute('maxlength'), 10
 
 message.addEventListener('input', onInput);
 
-function onInput(event) {
-    let length = event.target.value.length;
+function onInput(event: Event) {
+    let length = (event.target as HTMLInputElement).value.length
     counter.innerText = maxlength - length + ' characters left…';
     if (length >= maxlength) {
         counter.innerHTML = `<span style='color:red;'>Max ${maxlength} characters!<\span>`
