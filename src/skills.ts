@@ -70,7 +70,7 @@ function editBtn(li: HTMLLIElement, id: string) {
 
     function clickEditBtn() {
         const id = edit.getAttribute('id')
-        editForm(li, id)
+        editForm(li, Number(id))
         edit.removeEventListener('click', clickEditBtn)
     }
 

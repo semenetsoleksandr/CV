@@ -1,3 +1,4 @@
+"use strict";
 const url = 'https://api.github.com/users/semenetsoleksandr'
 const gitLogin = document.getElementById('github-name') as HTMLElement;
 const gitBio = document.getElementById('github-bio') as HTMLElement;
