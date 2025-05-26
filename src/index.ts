@@ -1,13 +1,13 @@
-const form = document.getElementById('form-contact');
-const reset = document.getElementById('form-reset');
-const counter = document.getElementById('character-count');
-const message = document.getElementById('message');
-const maxlength = parseInt(message.getAttribute('maxlength'), 10);
+const form = document.getElementById('form-contact') as HTMLElement
+const reset = document.getElementById('form-reset') as HTMLElement
+const counter = document.getElementById('character-count') as HTMLElement
+const message = document.getElementById('message') as HTMLTextAreaElement
+const maxlength: number = parseInt(<string>message.getAttribute('maxlength'), 10);
 
 message.addEventListener('input', onInput);
 
-function onInput(event) {
-    let length = event.target.value.length;
+function onInput(event: Event) {
+    let length = (event.target as HTMLInputElement).value.length
     counter.innerText = maxlength - length + ' characters left…';
     if (length >= maxlength) {
         counter.innerHTML = `<span style='color:red;'>Max ${maxlength} characters!<\span>`
@@ -16,7 +16,7 @@ function onInput(event) {
 
 form.addEventListener('submit', onFormSubmit);
 
-function onFormSubmit(event) {
+function onFormSubmit(event: SubmitEvent) {
     event.preventDefault();
     form.removeEventListener('submit', onFormSubmit);
     form.style.display = 'none';
@@ -27,14 +27,19 @@ function onFormSubmit(event) {
     counter.innerText = '';
 }
 
-function onReset(event) {
+function onReset(event: MouseEvent) {
     reset.removeEventListener('click', onReset);
     form.style.display = 'block';
     reset.style.display = 'none';
     form.addEventListener('submit', onFormSubmit);
 }
 
-message.value = localStorage.getItem('area')
+if (message) {
+    const areaLocal = localStorage.getItem('area')
+    if (areaLocal != null) {
+        message.value = areaLocal
+    }
+}
 message.oninput = () => {
     localStorage.setItem('area', message.value)
 }

@@ -178,6 +178,11 @@ li button {
     background-color: white;
 }
 
+li button {
+    border: none;
+    background-color: white;
+}
+
 img.cv {
     width: 250px;
     height: 250px;
